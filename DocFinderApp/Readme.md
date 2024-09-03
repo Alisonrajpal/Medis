@@ -13,3 +13,5 @@ Steps: In order to complete it
    npm install @react-navigation/native
    npm install @react-navigation/stack
    npm install react-native-screens react-native-safe-area-context
+
+   5.3. Try to put render on the screen

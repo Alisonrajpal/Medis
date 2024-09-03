@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-function DetailsScreen({ route }) {
+function DetailsX({ route }) {
   const { doctor } = route.params;
   return (
     <View style={styles.container}>
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DetailsScreen;
+export default DetailsX;

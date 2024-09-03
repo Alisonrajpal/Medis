@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { FlatList,TextInput, StyleSheet, View } from "react-native";
+import { FlatList, TextInput, StyleSheet, View, Button } from "react-native";
 import React, { useState, useEffect } from "react";
 
 //create a variable in an array to hold all the objects and key values
@@ -157,26 +157,33 @@ const data = [
 ];
 
 export default function App() {
-  return 
-    const [search, setSearch] =useState('');
-    const [filteredData, setFilteredData] = useDate(data);
+  return;
+  const [search, setSearch] = useState("");
+  const [filteredData, setFilteredData] = useDate(data);
 
-    useEffect(()=>{
-      setFilteredData(//get the data from the array in the object
-        data.filter(item=>
-          item.diag_code.toLowerCase().includes(search.toLowerCase())
-        )
+  useEffect(() => {
+    setFilteredData(
+      //get the data from the array in the object
+      data.filter((item) =>
+        item.diag_code.toLowerCase().includes(search.toLowerCase())
       )
-    },[search]);//call the search variable
-    return(
+    );
+  }, [search]); //call the search variable
+  return (
     <View style={styles.container}>
-      <TextInput placeholder="Search your diagnosis code here..." onChangeText={setSearch}/>
-     
-     <FlatList data={filteredData}
-     keyExtractor={item => item.diag_id.toString()}
-     renderItem={({item})=>()}/>
+      <TextInput
+        style={styles.bar}
+        placeholder="Search your diagnosis code here..."
+        onChangeText={setSearch}
+      />
+      //use mapping method in react native for filteringx
+      <FlatList
+        data={filteredData}
+        keyExtractor={(item) => item.diag_id.toString()}
+        renderItem={({ item }) => {}}
+      />
+      <Button />
     </View>
-    
   );
 }
 
@@ -186,5 +193,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  bar: {
+    backgroundColor: "#fff",
+    textAlign: "center",
   },
 });
