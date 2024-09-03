@@ -1,0 +1,60 @@
+import { StatusBar } from "expo-status-bar";
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  Button,
+  View,
+  ImageBackground, 
+} from "react-native";
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <ImageBackground
+        style={styles.background}
+        source={{
+          uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_EoRaSsKdAA31Q5mcqSdldyoEAmNx8homaQ&s",
+        }}
+      />
+
+      <Text>Doctor Search App</Text>
+      <TextInput style={styles.search}> Enter you text hherre</TextInput>
+      <Button
+        style={styles.btn}
+        onPress={() => {
+          console.log("You have tapped the button!");
+        }}
+        title="Serach Doctor Available"
+      />
+
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
+st styles = StyleSheet.create({
+  btn: {
+    marginTop: "23px",
+  },
+  background: {
+    backgroundSize: "cover",
+    width: "100%",
+    height: "50%",
+  },
+  search: {
+    backgroundColor: "#fff",
+    width: "50%",
+    textAlign:con "center",
+  },
+  container: {
+    flex: 1,
+    backgroundColor: "lightblue",
+    fontFamily: "Sans serif",
+    fontWeight: "bold",
+
+    fontSize: "34px",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
